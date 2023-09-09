@@ -100,5 +100,8 @@ app.post("/delete",(req,res)=>{
     }
 });
 
-const port = 3000;
-app.listen(port,()=>{console.log(`Server is up and running on port ${port}.`)});
+let port = process.env.PORT;
+if(port == null || port == "") {
+    port = 3000;
+}
+app.listen(port,()=>{console.log(`Server has started successfully.`)});
